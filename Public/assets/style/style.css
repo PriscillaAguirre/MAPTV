@@ -1,4 +1,4 @@
-/* Importa las fuentes necesarias */
+/* Importa las fuentes de google */
 @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap');
 
@@ -8,7 +8,6 @@ body {
     margin: 0;
     padding: 0;
 } 
-/* Estilos de tu código original */
 .rectangle-1 {
 	background: #000000;
 	border: 1px solid #000000;
@@ -34,7 +33,6 @@ body {
 	color:#098b6b;
 	font-weight: bold;
 	font-size: 26px;
-	text-decoration: none;
 	gap: 25px;
 }
 .button-1 {
