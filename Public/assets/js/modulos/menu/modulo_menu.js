@@ -13,6 +13,7 @@ export async function MenuDespegable(){
   const div1 = document.createElement("div");
    div1.classList.add("menu-despegable"); // Clase CSS para el menú despegable
    header.append(div1);
+
   const buttonmenu = document.createElement("button");
    buttonmenu.classList.add("button-menu"); // Clase CSS para el botón del menú
    buttonmenu.textContent = "☰"; // Icono de menú 
@@ -26,12 +27,6 @@ export async function MenuDespegable(){
    span.style.fontSize = "24px";
    span.style.color = "#ffff";
    header.append(span);
-  
-  const btnRegistro = document.createElement("button");
-   btnRegistro.classList.add("btn-registro");
-   btnRegistro.textContent ="Registro";
-   btnRegistro.href = "/Public/pages/usuarios/sesion/Registro.html";
-   header.append(btnRegistro);
 
   const nav = document.createElement("nav");
    nav.classList.add("menu-ul"); // Clase CSS para la navegación del menú
@@ -39,20 +34,19 @@ export async function MenuDespegable(){
 
   for(let i=0; i < links.menu.length; i++){
     const li = document.createElement("li"); 
-     
-     // const a = document.createElement("a");
-     li.textContent = links.menu[i].nombre;
-     li.href = links.menu[i].enlace ; // Asignar la URL del enlace
-     li.classList.add("menu-item"); // Clase CSS para los ítems del menú
-    
-     //li.append(a);
+    const a = document.createElement("a");
+
+     a.textContent = links.menu[i].nombre;
+     a.href = links.menu[i].enlace ; // Asignar la URL del enlace
+     a.classList.add("menu-item"); // Clase CSS para los ítems del menú
+     li.classList.add("li-menu"); // Clase CSS para los ítems del menú
+     li.append(a);
      nav.append(li);
   }
  buttonmenu.append(nav);  
 
   function toggleMenu() {
-    buttonmenu.classList.toggle("open"); 
-
+    buttonmenu.classList.toggle("open");  //toggle agrega o quita una clase
     if (nav.style.display === "none") {
       nav.style.display = "flex"; // Mostrar el menú
     } else {
@@ -61,12 +55,30 @@ export async function MenuDespegable(){
   }
   buttonmenu.addEventListener("click", toggleMenu);
 
+  const verificar = localStorage.getItem("isLoggedIn"); // localStorage.getItem obtiene el valor de una clave en el almacenamiento local
+  const btnRegistro = document.createElement("button");
+  if(verificar === "true"){
+    const lupa = document.createElement("button");
+    lupa.textContent = "🔍 buscador"; // Icono de lupa
+    lupa.classList.add("lupa-buscador");
+    lupa.addEventListener("click", () => { 
+      localStorage.setItem("isLoggedIn", "false");
+      window.location.href = "/Public/pages/usuarios/inicios/home.html"; 
+      //redirecciona a la página de login
+    });
+    header.append(lupa);
+  }else{
+     btnRegistro.classList.add("btn-registro");
+     btnRegistro.textContent ="Registro";
+     btnRegistro.href = "/Public/pages/usuarios/inicios/index.html";
+     header.append(btnRegistro);
+  }
   function Registro(){
     window.location.href = "/Public/pages/usuarios/sesion/Registro.html"; 
     //windos.location.href sirve para redireccionar a otra página
   }
   btnRegistro.addEventListener("click", Registro);
 
-}
+} 
 
  

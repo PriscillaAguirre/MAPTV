@@ -2,9 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Amarante&family=Staatliches&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Staatliches&display=swap');
 
+:root{ /* selector es un marcador de posición para cualquier selector CSS válido, como una clase, un ID o un elemento HTML. */
+    --font-size: s 2px;
+}
+
 body {
     font-family: sans-serif;
-    background: linear-gradient(to right, #46ecf1 30%, #068f54 70%); 
+    background: linear-gradient(to right, #46ecf1 30%, #029c59 70%); 
     margin: 0;
     padding: 0;
 } 
@@ -16,24 +20,6 @@ body {
 .terminos{
 	text-decoration: none;
 }
-.-rea-de-texto-1{
-	padding: 4px 8px;
-	box-shadow: 0px 4px 4px #471879;
-	color: #009688;
-	font-family: "Staatliches";
-	font-weight: 400;
-	font-size: 2rem;
-	line-height: 1.3;
-	text-align: center;
-}
-.-rea-de-texto-1:hover{
-	color: #fff;
-	text-shadow: 
-	0 0 5px #fff,
-	0 0 20px #00f,
-	0 0 40px #AA00ff;
-
-}
 .imagenes {
     width: 400px;
     height: 300px;
@@ -43,8 +29,8 @@ body {
 	color: #7D4AB3;
 	font-family: "Staatliches";
 	font-weight: 400;
-	font-size: 15px;
-	text-decoration: underline;
+	font: s ;  
+	text-decoration: underline; /* urdeline es para subrayar */
 }
 .button-2 {
 	padding: 0px 10px;
@@ -52,7 +38,7 @@ body {
 	border: 1px solid #232323;
 	border-radius: 10px;
 	color: #FFFFFF;
-	font-family: "Helvetica", Arial, sans-serif;
+	font-family: "Staatliches";
 	font-weight: 400;
 	font-size: 14px;
 	text-align: center;
@@ -144,9 +130,9 @@ body {
 	font-weight: bold;
 	font-size: 10px;
 }
-.-maptv-1 {
+.-maptv-1  {
 	color: #B3B3B3;
 	font-family: "Helvetica", Arial, sans-serif;
 	font-weight: bold;
-	font-size: 16px;
+    font-size: var(--font-size);
 }
