@@ -97,32 +97,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/Public/assets/js/modulos/menu/main_menu.js"></script>
     <script type="module" src="/Public/assets/js/modulos/footer/main_footer.js"></script>
-    <script>
-    // Mostrar tabla de administración al comenzar torneo
-    document.addEventListener('DOMContentLoaded', function() {
-        const btnComenzar = document.getElementById('comenzarTorneo');
-        const infoTorneo = document.getElementById('torneo-info');
-        const adminPart = document.getElementById('admin-participantes');
-        const nombreTorneoInput = document.getElementById('nombreTorneo');
-        const nombreTorneoSpan = document.getElementById('nombreTorneoSpan');
-        if(btnComenzar) {
-            btnComenzar.addEventListener('click', function() {
-                infoTorneo.style.display = 'none';
-                adminPart.style.display = 'block';
-                // Actualiza el nombre del torneo en la tabla de administración
-                if(nombreTorneoSpan && nombreTorneoInput) {
-                    nombreTorneoSpan.textContent = nombreTorneoInput.value;
-                }
-            });
-        }
-        // Guardar cambios (puedes agregar lógica para guardar en backend)
-        const btnGuardar = document.getElementById('guardarTorneo');
-        if(btnGuardar) {
-            btnGuardar.addEventListener('click', function() {
-                alert('Cambios guardados (solo visual, agrega lógica backend si lo necesitas)');
-            });
-        }
-    });
-    </script>
+    <script src="/Public/assets/js/admi.js"></script>
 </body>
 </html>
